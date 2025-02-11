@@ -26,12 +26,11 @@ jobs:
         run: |
           npm ci
           npm install -g @ionic/cli
+          npm install -g angular-cli-ghpages
 
       - name: Build
-        run: npm run build:prod
+        run: ionic build --prod -- --base-href https://timeless-residents.github.io/handson-ionic-framework/
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: www
+      - name: Deploy
+        run: npx angular-cli-ghpages --dir=www --no-silent
+        
