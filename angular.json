@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/handson-ionic-framework/",
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -37,6 +36,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/handson-ionic-framework/",
               "budgets": [
                 {
                   "type": "initial",
@@ -58,6 +58,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "baseHref": "/",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
