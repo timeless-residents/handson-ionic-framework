@@ -1,0 +1,7 @@
+{
+  "name": "handson-ionic-framework",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
