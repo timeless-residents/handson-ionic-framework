@@ -37,4 +37,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy
-        run: npx angular-cli-ghpages --dir=www --no-silent
+        run: |
+          npx angular-cli-ghpages --dir=www --no-silent --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/timeless-residents/handson-ionic-framework.git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
