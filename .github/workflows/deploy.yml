@@ -31,6 +31,10 @@ jobs:
       - name: Build
         run: ionic build --prod -- --base-href https://timeless-residents.github.io/handson-ionic-framework/
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy
         run: npx angular-cli-ghpages --dir=www --no-silent
-        
